@@ -1,1 +1,19 @@
+pipeline {
+    agent any
 
+    stages {
+        stage('Read File') {
+            steps {
+                sh 'cat README.md'
+            }
+        }
+
+        stage('System Info') {
+            steps {
+                sh 'date'
+                sh 'whoami'
+                sh 'pwd'
+            }
+        }
+    }
+}
